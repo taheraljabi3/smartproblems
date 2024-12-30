@@ -1,10 +1,21 @@
 {
   "name": "my-render-project",
   "version": "1.0.0",
+<<<<<<< HEAD
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+=======
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+>>>>>>> bd29fed7e4058a72f8aaf202ce41c279b4bd8981
   "keywords": [],
   "author": "",
   "license": "ISC",
