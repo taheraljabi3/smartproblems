@@ -1,12 +1,16 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios'); // تأكد من تثبيت axios
+const axios = require('axios');
 
 const app = express();
-const port = process.env.PORT || 3000; // يمكن استخدام البيئة السحابية لتحديد البورت تلقائيًا
+const port = process.env.PORT || 3000;
 
-// السماح بالطلبات من أي مصدر (CORS)
-app.use(cors());
+// تفعيل CORS لجميع النطاقات
+app.use(cors({
+    origin: 'https://admin.smarterp.top',  // تحديد النطاق الذي يسمح بالوصول
+    methods: ['GET', 'POST'],  // تحديد الطرق المسموح بها
+    allowedHeaders: ['Content-Type'],  // السماح بالهيدر Content-Type
+}));
 
 // تفسير محتوى JSON القادم من الطلبات
 app.use(express.json());
@@ -40,5 +44,5 @@ app.post('/proxy', async (req, res) => {
 
 // تشغيل الخادم
 app.listen(port, () => {
-    console.log(`Proxy server is running on http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
